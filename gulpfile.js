@@ -4,6 +4,7 @@ var gulp            = require('gulp'),
     concat          = require('gulp-concat'),
     uglify          = require('gulp-uglify'),
     rename          = require('gulp-rename'),
+    cssnano         = require('gulp-cssnano'),
     del             = require('del'),
     autoprefixer    = require('gulp-autoprefixer'),
     sourcemaps      = require('gulp-sourcemaps');
