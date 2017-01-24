@@ -14,7 +14,7 @@ gulp.task('sass', function(){
         .pipe(sourcemaps.init())
         .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
         .pipe(autoprefixer(['last 15 versions', '> 1%', 'ie 8', 'ie 7'], { cascade: false }))
-        .pipe(sourcemaps.write())
+        .pipe(sourcemaps.write('../css', {addComment: false}))
         .pipe(gulp.dest('app/css'))
         .pipe(browserSync.reload({stream: true}))
 });
