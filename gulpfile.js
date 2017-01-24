@@ -1,16 +1,19 @@
-var gulp        = require('gulp'),
-    sass        = require('gulp-sass'),
-    browserSync = require('browser-sync'),
-    concat      = require('gulp-concat'),
-    uglify      = require('gulp-uglify'),
-    rename      = require('gulp-rename'),
-    del         = require('del'),
-    autoprefixer= require('gulp-autoprefixer');
+var gulp            = require('gulp'),
+    sass            = require('gulp-sass'),
+    browserSync     = require('browser-sync'),
+    concat          = require('gulp-concat'),
+    uglify          = require('gulp-uglify'),
+    rename          = require('gulp-rename'),
+    del             = require('del'),
+    autoprefixer    = require('gulp-autoprefixer'),
+    sourcemaps      = require('gulp-sourcemaps');
 
 gulp.task('sass', function(){
     return gulp.src('app/sass/**/*.scss')
-        .pipe(sass().on('error', sass.logError))
+        .pipe(sourcemaps.init())
+        .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
         .pipe(autoprefixer(['last 15 versions', '> 1%', 'ie 8', 'ie 7'], { cascade: false }))
+        .pipe(sourcemaps.write())
         .pipe(gulp.dest('app/css'))
         .pipe(browserSync.reload({stream: true}))
 });
