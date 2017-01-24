@@ -1,0 +1,53 @@
+/* ============================ Main styles ============================ */
+::-moz-selection {
+  background: rgba(255, 240, 0, 0.5); }
+::selection {
+  background: rgba(255, 240, 0, 0.5); }
+
+.flex {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center; }
+
+.align-right {
+  text-align: right; }
+
+.align-left {
+  text-align: left; }
+
+.align-center {
+  text-align: center; }
+
+img.alignleft {
+  float: left;
+  margin: 20px;
+  margin-left: 0; }
+
+img.alignright {
+  float: right;
+  margin: 20px;
+  margin-right: 0; }
+
+img.aligncenter {
+  display: block;
+  margin: 20px auto; }
+
+img.alignnone {
+  display: block;
+  margin: 20px; }
+
+input:focus, input:active,
+.btn:focus,
+.btn:active {
+  outline: none; }
+
+/* ============================ Tamplate styles ============================ */
+/* ============================ Fonts ============================ */
+/* ============================ Media max-1200px ============================ */
+/* ============================ Media max-992px ============================ */
+/* ============================ Media max-767px ============================ */
