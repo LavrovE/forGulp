@@ -1,6 +1,6 @@
 {
   "name": "thamplate",
-  "description": "My first gulp using",
+  "description": "Web template for start project",
   "main": "index.js",
   "authors": [
     "Alexandr Kuchinskiy"

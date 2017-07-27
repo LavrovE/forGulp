@@ -12,9 +12,9 @@ var gulp            = require('gulp'),
 gulp.task('sass', function(){
     return gulp.src('app/sass/**/*.scss')
         .pipe(sourcemaps.init())
-        .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
-        .pipe(autoprefixer(['last 15 versions', '> 1%', 'ie 8', 'ie 7'], { cascade: false }))
-        .pipe(sourcemaps.write('../css', {addComment: false}))
+            .pipe(sass({outputStyle: 'expanded'}).on('error', sass.logError))
+            .pipe(autoprefixer(['last 15 versions', '> 1%', 'ie 8', 'ie 7'], { cascade: false }))
+        .pipe(sourcemaps.write('../css', {addComment: true}))
         .pipe(gulp.dest('app/css'))
         .pipe(browserSync.reload({stream: true}))
 });
@@ -30,18 +30,8 @@ gulp.task('browser-sync', function() {
 
 gulp.task('scripts', function() {
     return gulp.src([
-        // 'app/libs/modernizr.js',
         'app/libs/jquery/dist/jquery.min.js',
-        'app/libs/bootstrap/dist/js/bootstrap.js',
-        // 'app/libs/sweetalert/dist/sweetalert.min.js',
-        // 'app/libs/wow.js',
-        // 'app/libs/jquery.maskedinput/dist/jquery.maskedinput.js',
-        // 'app/libs/headroom.js/dist/headroom.js',
-        // 'app/libs/jquery-scrollto.js',
-        // 'app/libs/jquery.scrollTo/jquery.scrollTo.js',
-        // 'app/libs/owl.carousel/owl.carousel.js',
-        // 'app/libs/stickUp.js'
-        // 'app/libs/vue/dist/vue.min.js',
+        'app/libs/bootstrap/dist/js/bootstrap.js'
         ])
         .pipe(concat('libs.min.js'))
         .pipe(uglify())
@@ -61,6 +51,7 @@ gulp.task('watch', ['browser-sync', 'css-libs', 'scripts'], function() {
     gulp.watch('app/js/**/*.js', browserSync.reload);
 });
 
-// ----------------------Дефолтный таск gulp --------------------------------
-
-gulp.task('default', ['watch']);
+gulp.task('glyphicon-bootstrap', function() {
+    return gulp.src('app/libs/bootstrap/dist/fonts/**/*')
+        .pipe(gulp.dest('app/fonts'));
+});

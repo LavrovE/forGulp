@@ -1,77 +1,11 @@
-/* ============================ Main styles ============================ */
+@import "variables-functions-and-mixins";
 
-$main-color: #004a80;
-$accent-color: #69A93D;
-$white: #fff;
-$black: #000;
+::selection { background: rgba($green-color, .5); }
+* { font-family: "ProximaNova", Serif; }
+.container-fluid {max-width: 1920px;}
+.align-right { text-align: right; }
+.align-left { text-align: left; }
+.align-center { text-align: center; }
 
-::selection {
-  background: rgba(#fff000, .5);
-}
-
-.flex {
-  display: flex;
-  align-items: center;
-}
-
-.align-right {
-  text-align: right;
-}
-
-.align-left {
-  text-align: left;
-}
-
-.align-center {
-  text-align: center;
-}
-
-img.alignleft {
-  float: left;
-  margin: 20px;
-  margin-left: 0;
-}
-
-img.alignright {
-  float: right;
-  margin: 20px;
-  margin-right: 0;
-}
-
-img.aligncenter {
-  display: block;
-  margin: 20px auto;
-}
-
-img.alignnone {
-  display: block;
-  margin: 20px;
-}
-
-input,
-.btn {
-  &:focus,
-  &:active {
-    outline: none;
-  }
-}
-
-/* ============================ Tamplate styles ============================ */
-
-
-
-/* ============================ Fonts ============================ */
-
+@import 'media';
 @import "fonts";
-
-/* ============================ Media max-1200px ============================ */
-
-@import 'max-1200';
-
-/* ============================ Media max-992px ============================ */
-
-@import 'max-992';
-
-/* ============================ Media max-767px ============================ */
-
-@import 'max-767';
